@@ -3,6 +3,7 @@ import styles from "./estilos.module.css"
 import StopWatch from "./stopWatch"
 import Input from "./input";
 import Stats from "./stats";
+import Switch from "react-switch";
 
 
 export default function Principal() {
@@ -111,7 +112,7 @@ export default function Principal() {
 
                 <div className={styles.secondaryBottom}> <StopWatch running={watchAway} setAll={setWhatchAwayTime} /> <Input name={away} setName={setAway} itsOn={itsOn} color={colorAway} setColor={setColorAway} /></div>
 
-                <div className={styles.barra}> {itsOn ? <p>Playing...</p> : <p>Paused</p>} {stats ? <div className={styles.finish} onClick={finishGame}> SHOW STATS </div> : <div className={styles.finish} onClick={finishGame}> SHOW STATS </div>} <div className={styles.play} onClick={pauseStop} > {!itsOn ? <img className={styles.play} src="./play.svg" /> : <img className={styles.play} src="./pause.svg" />} </div> </div>
+                <div className={styles.barra}> {itsOn ? <p>Playing...</p> : <p>Paused</p>} {stats ? <div className={styles.finish} onClick={finishGame}> SHOW STATS </div> : <div className={styles.finish} onClick={finishGame}> SHOW STATS </div>}  <Switch onChange={pauseStop} checked={itsOn} ></Switch> </div>
 
 
             </div >
