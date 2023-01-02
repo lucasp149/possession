@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&family=Titillium+Web:ital,wght@0,300;1,300&display=swap');
+
+
+h3 {
+    text-align: center;
+}
+
+.principal {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.team {
+
+    box-sizing: border-box;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    box-sizing: border-box;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra {
+    height: 10vh;
+    background-color: rgb(51, 48, 48);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.play {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.clock {
+    font-size: 50px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.numbers {
+    pointer-events: none;
+}
+
+.input {
+    width: 100px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.picker {
+    filter: grayscale(0);
+    z-index: 2;
+}
+
+.secondary {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.secondaryBottom {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, 50%);
+    pointer-events: none;
+}
+
+.finish {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(20, 20, 39);
+    border: 2px solid rgb(59, 58, 70);
+    box-shadow: -1px -2px rgb(134, 150, 150);
+    width: 100px;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.finish:hover {
+    background-color: rgb(13, 13, 36);
+}
+
+
+.stats {
+    height:100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.play{
+    cursor: pointer;
+}

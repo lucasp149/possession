@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Possession App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+With this web app the user can take the possession of each team and make stats out of it. It may be a good tool for journalist or 
+coaches that need stats from amateur teams.
 
-## Available Scripts
+## Technologies
 
-In the project directory, you can run:
+I start with create react-app and been working with Visual Studio Code
 
-### `yarn start`
+## Issues
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I am just starting the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+When clicking on div but on the clock itself the counter doesn't start. SOLUTION: Instead e.target had to use e.currentTarget to select the div ID. 
 
-### `yarn test`
+Include a color picker for each team. Be carefull with de clocks color. SOLUTION: Added color picker from "react-color-picker" (https://github.com/super-effective/react-color-picker).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When pausing the counters to edit, the color on the color picker has a grayscale applied effect. SOLUTION: I had to put the StopWatch and the Picker on a different DIV and had to center it with postion:absolute.
 
-### `yarn build`
+Need to display the percentaje of possetion of each team. Im triying to do it when clicking on a button. After clicking the button the app needs to take the "time" of each team and calculate the percentaje. SOLUTION: Create a div over the rest of the app that includes de clock data of each team (including no-team possession). When click to open this div overlap the rest of the app. Then you can close it. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+When the clock is on 0 the stats div returns Nan for persentaje. SOLUTION: I create a function called nanCorrector. The problem was that when the sum of all clocks was "0", during the process i would be a zero division. With this function i solved it: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+function nanCorrector(number) {
+        if (isNaN(number)) {
+            return 0;
+        }
+        else {
+            return number;
+        }
+    }
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
